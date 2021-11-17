@@ -1,5 +1,10 @@
 # Cloudrail Integrations
-Cloudrail is designed to be integrated into all CI pipelines. We maintain documentation and specific integrations for a few of the major ones:
+Cloudrail is designed to be integrated into all CI pipelines.
+
+![Cloudrail and other logos](../_media/integrations/integrations_general.png)
+
+
+We maintain documentation and specific integrations for a few of the major ones:
 
 - [AWS CodeBuild](integrations/aws-codebuild.md)
 - [CircleCI](integrations/circleci.md)
