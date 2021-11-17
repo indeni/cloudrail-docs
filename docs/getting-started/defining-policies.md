@@ -30,7 +30,7 @@ By default, all the rules are set to “Advise” mode. Running Cloudrail will h
 To create your own rule, visit the [create your own rule tutorial]().
 
 ## Policies
-Once you are ready to strongly enforce a rule from the task center, you will first need to create a Policy. A Policy acts as a container for all your rule configurations.
+Once you are ready to strongly enforce a rule, you will first need to create a Policy. A Policy acts as a container for all your rule configurations.
 
 While you create the policy, you can define which cloud accounts should be associated with said policy. You can have a separate policy for each stage of the development process (Dev, User Acceptance Testing, Staging, and Production).
 

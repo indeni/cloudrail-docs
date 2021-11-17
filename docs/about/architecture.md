@@ -1,6 +1,7 @@
 # Cloudrail Architecture
 Cloudrail is a cloud-delivered service (SaaS) that exposes certain APIs to interact with the service, both for running IaC security scans and to interact with the web application. Users interact with the Cloudrail service through the Cloudrail CLI and Web Application. Cloudrail can also connect directly to your cloud accounts (AWS, GCP, Azure) for dynamic analysis.
 
+![Cloudrail architecture](../_media/integrations/cloudrail_architecture.png)
 ## Connectivity into Cloudrail SaaS
 
 ### CLI
