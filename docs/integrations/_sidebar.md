@@ -10,6 +10,7 @@
     * [GitLab](integrations/gitlab.md)
     * [GitHub](integrations/github-actions.md)
     * [Jenkins](integrations/jenkins.md)
+    * [Terraform Enterprise](integrations/terraform-enterprise.md)
     * [Spacelift](integrations/spacelift.md)
     * [Visual Studio Code](integrations/vs-code.md)
 * [Tutorials](misc/overview.md)
