@@ -1,3 +1,4 @@
+* [Cloudrail Homepage](https://cloudrail.app)
 * [Cloudrail Docs](/)
 * [Getting Started 🚀](getting-started/account-setup.md)
 * [About](about/about.md)
@@ -5,4 +6,4 @@
     * [Drift Detection](features/drift-detection.md)
     * [Single Sign-On (SSO)](features/sso.md)
 * [Integrations](integrations/overview.md)
-* [Tutorials](misc/overview.md)
+* [Tutorials](tutorials/overview.md)

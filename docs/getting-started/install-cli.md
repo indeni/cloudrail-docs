@@ -19,7 +19,7 @@ Try to run the following command:
 cloudrail --version
 ```
 
-If you receive a command not found error, [you'll need to add the python directory to your path](misc/install/adding-cloudrail-to-your-path.md). Otherwise, you're good to continue.
+If you receive a command not found error, [you'll need to add the python directory to your path](tutorials/install/adding-cloudrail-to-your-path.md). Otherwise, you're good to continue.
 
 ### Add Your API Key
 To complete the setup, we need to add the API key from our account to the CLI tool.
@@ -39,6 +39,8 @@ To complete the setup, we need to add the API key from our account to the CLI to
 ```bash
 cloudrail config set api_key=<your_api_key>
 ```
+
+---
 
 ## Next Steps
 Now that you've got the CLI installed, you're ready to [scan some terraform files](getting-started/basic-use.md).

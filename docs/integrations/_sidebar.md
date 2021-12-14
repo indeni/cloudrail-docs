@@ -1,3 +1,4 @@
+* [Cloudrail Homepage](https://cloudrail.app)
 * [Cloudrail Docs](/)
 * [Getting Started 🚀](getting-started/account-setup.md)
 * [About](about/about.md)
@@ -13,4 +14,4 @@
     * [Terraform Enterprise](integrations/terraform-enterprise.md)
     * [Spacelift](integrations/spacelift.md)
     * [Visual Studio Code](integrations/vs-code.md)
-* [Tutorials](misc/overview.md)
+* [Tutorials](tutorials/overview.md)

@@ -19,4 +19,3 @@ Finally, run the make run command to serve the docs on localhost:3000. Make any 
 ```bash
 make run
 ```
-

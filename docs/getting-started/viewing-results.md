@@ -39,5 +39,7 @@ The evidence field will explain the rationale behind Cloudrail’s assessment of
 ## Making Rules Mandatory
 The assessment tab is great to visualize security violations. Please note, Cloudrail only suggests rules to you. To make any Mandatory, you will need to create your own policy, which acts as a container for your rule configurations. Cloudrail will make recommendations from your existing IaC scans.
 
+---
+
 ## Next Steps
 Next, check out how to [connect your cloud account to cloudrail for dynamic scans](getting-started/connecting-clouds.md).

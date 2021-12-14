@@ -78,7 +78,7 @@ A Company policy lets you specify, for each Cloud Account, which Cloudrail rules
 > Build a custom terraform worker docker image to run Cloudrail
 
 
-In order to run Cloudrail with Terraform Enterprise, we'll need to build our own custom Terraform worker. For completed code, [visit our Github repository](https://github.com/indeni/cloudrail-tfe-integration/docker).
+In order to run Cloudrail with Terraform Enterprise, we'll need to build our own custom Terraform worker. For completed code, [visit our Github repository](https://github.com/indeni/cloudrail-tfe-integration/tree/master/docker/tfe-cloudrail-worker).
 
 1. Define the necessary Dockerfile with requirements.
 

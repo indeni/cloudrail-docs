@@ -4,7 +4,7 @@
 
 
 ## How To Connect Cloudrail To Your AWS Account
-1. In the cloudrail web application, navigate to the [Cloud Management tab](https://web.cloudrail.app/environments/cloud-management).
+1. In the cloudrail web application, navigate to `Environments`, then the [Live Environment tab](https://web.cloudrail.app/environments/live-environment).
 
 2. Click the ["Add Account" button](https://web.cloudrail.app/add-account) to be taken to the add account wizard.
 
@@ -57,3 +57,8 @@ Parameters:
 
 ## How It Works
 Cloudrail asks that you configure a role within your account that Cloudrail can assume. The role has specific policies attached to it (SecurityAudit and ViewOnlyAccess) and you also can choose to set your own policies. From there, cloudrail is able to audit your account for misconfigurations and drift.
+
+---
+
+## Next Steps
+Next, check out how to [add custom rules and policies for your environments](getting-started/defining-policies.md).

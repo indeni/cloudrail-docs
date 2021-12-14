@@ -3,7 +3,7 @@
 ![Microsoft Azure logo](../_media/integrations/cloudrail_azure.png)
 
 ## How To Connect Cloudrail To Your Microsoft Azure Account
-1. In the cloudrail web application, navigate to the [Cloud Management tab](https://web.cloudrail.app/environments/cloud-management).
+1. In the cloudrail web application, navigate to `Environments`, then the [Live Environment tab](https://web.cloudrail.app/environments/live-environment).
 
 2. Click the ["Add Account" button](https://web.cloudrail.app/add-account) to be taken to the add account wizard.
 
@@ -15,3 +15,8 @@
 
 ## How It Works
 Cloudrail connects through an Active Directory application, which needs to be provided with the Reader role. From here, cloudrail can audit the account for misconfigurations and drift.
+
+---
+
+## Next Steps
+Next, check out how to [add custom rules and policies for your environments](getting-started/defining-policies.md).

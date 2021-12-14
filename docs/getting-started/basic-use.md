@@ -44,6 +44,7 @@ Summary:
 ## Viewing Your Results
 After your run is complete, cloudrail will print any violations to your console, and will also make them available in the [web application](https://web.cloudrail.app/environments/assessments) with additional information on the problems and how to fix them.
 
+---
 
 ## Next Steps
 Next, check out how to [view your results in detail](getting-started/viewing-results.md).

@@ -1,3 +1,4 @@
+* [Cloudrail Homepage](https://cloudrail.app)
 * [Cloudrail Docs](/)
 * [Getting Started 🚀](getting-started/account-setup.md)
 * [About](#)
@@ -6,4 +7,4 @@
     * [Architecture](about/architecture.md)
 * [Features](features/features.md)
 * [Integrations](integrations/overview.md)
-* [Tutorials](misc/overview.md)
+* [Tutorials](tutorials/overview.md)
