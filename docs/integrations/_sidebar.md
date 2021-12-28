@@ -15,3 +15,4 @@
     * [Spacelift](integrations/spacelift.md)
     * [Visual Studio Code](integrations/vs-code.md)
 * [Tutorials](tutorials/overview.md)
+* [Rules](rules/overview.md)

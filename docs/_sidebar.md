@@ -5,3 +5,4 @@
 * [Features](features/features.md)
 * [Integrations](integrations/overview.md)
 * [Tutorials](tutorials/overview.md)
+* [Rules](rules/overview.md)
