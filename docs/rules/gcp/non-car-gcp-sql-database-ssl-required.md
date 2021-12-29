@@ -23,6 +23,38 @@ Ensure SQL database requires SSL
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_gcp_sql_database_ssl_required*.
+```hcl
+resource "google_sql_database_instance" "example" {
+  name             = "example-instance"
+  database_version = "MYSQL_5_7"
+  settings {
+    tier = "db-f1-micro"
+  }
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_sql_database_instance" "example" {
+  name             = "example-instance"
+  database_version = "MYSQL_5_7"
+  settings {
+    tier = "db-f1-micro"
+    ip_configuration {
+        require_ssl = true
+    }
+  }
+}
+
+# ✅ 2021-12-29
+```
 
 
 
@@ -34,6 +66,14 @@ Ensure SQL database requires SSL
 Ensure SQL database requires SSL
 
 
+
+##### Example CLI Command
+The following is an example CLI command used to address the rule violation.
+```sh
+INSTANCE_NAME=your_cloudsql_instance_name
+gcloud sql instances patch $INSTANCE_NAME --require-ssl
+
+```
 
 
 ---

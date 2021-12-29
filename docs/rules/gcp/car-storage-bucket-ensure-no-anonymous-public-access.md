@@ -23,6 +23,41 @@ For the resources google_storage_bucket_iam_member and google_storage_bucket_iam
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *car_storage_bucket_ensure_no_anonymous_public_access*.
+```hcl
+resource "google_storage_default_object_access_control" "bucket_access_rule" {
+  bucket = google_storage_bucket.bucket.name
+  role   = "READER"
+  entity = "allUsers"
+}
+
+resource "google_storage_bucket" "bucket" {
+  name     = "example-bucket"
+  location = "US"
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_storage_default_object_access_control" "bucket_access_rule" {
+  bucket = google_storage_bucket.bucket.name
+  role   = "READER"
+  entity = "user-liz@example.com"
+}
+
+resource "google_storage_bucket" "bucket" {
+  name     = "example-bucket"
+  location = "US"
+}
+
+
+```
 
 
 

@@ -23,6 +23,53 @@ For the google_compute_instance resource ensure the metadata serial-port-enable 
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_compute_instance_ensure_serial_port_disabled*.
+```hcl
+resource "google_compute_instance" "example" {
+  name         = "example-compute-instance"
+  machine_type = "n2-standard-2"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  metadata = {
+    serial-port-enable = true
+  }
+
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_compute_instance" "example" {
+  name         = "example-compute-instance"
+  machine_type = "n2-standard-2"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  metadata = {
+    serial-port-enable = false
+  }
+
+}
+
+
+```
 
 
 

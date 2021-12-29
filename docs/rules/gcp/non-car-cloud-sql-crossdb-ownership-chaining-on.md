@@ -33,6 +33,7 @@ resource "google_sql_database_instance" "master" {
 
 }
 
+
 ```
 
 
@@ -53,6 +54,7 @@ resource "google_sql_database_instance" "master" {
   }
 }
 
+
 ```
 
 
@@ -69,7 +71,6 @@ Follow the guide at <https://cloud.google.com/sql/docs/sqlserver/flags> in order
 ##### Example CLI Command
 The following is an example CLI command used to address the rule violation.
 ```sh
-
 DATABASE_INSTANCE_NAME=your_instance_name
 gcloud sql instances patch $DATABASE_INSTANCE_NAME --database-flags "cross db ownership chaining=off"
 

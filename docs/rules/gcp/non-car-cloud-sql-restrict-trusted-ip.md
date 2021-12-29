@@ -23,6 +23,47 @@ For the google_sql_database_instance resource, set the authorized Networks param
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_cloud_sql_restrict_trusted_ip*.
+```hcl
+resource "google_sql_database_instance" "example" {
+  name             = "example-instance"
+  database_version = "MYSQL_5_7"
+  settings {
+    tier = "db-f1-micro"
+    ip_configuration {
+        authorized_networks {
+            name = "open-to-all"
+            value = "0.0.0.0/0"
+        }
+    }
+  }
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_sql_database_instance" "example" {
+  name             = "example-instance"
+  database_version = "MYSQL_5_7"
+  settings {
+    tier = "db-f1-micro"
+    ip_configuration {
+        authorized_networks {
+            name = "open-to-specific-ip"
+            value = "10.0.0.1/32"
+        }
+    }
+  }
+}
+
+# ✅ 2021-12-29
+```
 
 
 
