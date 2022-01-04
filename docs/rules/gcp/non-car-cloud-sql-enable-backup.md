@@ -23,6 +23,38 @@ For the google_sql_database_instance resources, ensure that backup_configuration
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_cloud_sql_enable_backup*.
+```hcl
+resource "google_sql_database_instance" "backup-config-test" {
+  name             = "backup-config-test"
+  database_version = "POSTGRES_11"
+  region           = "us-central1"
+
+  settings {
+    tier = "db-f1-micro"
+  }
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_sql_database_instance" "backup-config-test" {
+  name             = "backup-config-test"
+  database_version = "POSTGRES_11"
+  region           = "us-central1"
+
+  settings {
+    tier = "db-f1-micro"
+  }
+}
+
+```
 
 
 

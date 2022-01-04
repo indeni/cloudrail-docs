@@ -14,7 +14,12 @@ cd cloudrail-docs
 make install
 ```
 
-Finally, run the make run command to serve the docs on localhost:3000. Make any changes to markdown files as necessary.
+To build dynamically generated docs, run the following command:
+```bash
+make build
+```
+
+Finally, run the make run command to serve the docs on localhost:3000. Make any changes to markdown files as necessary, except auto-generated documentation (the rules directory).
 
 ```bash
 make run

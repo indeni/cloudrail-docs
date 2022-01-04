@@ -23,6 +23,56 @@ For the google_compute_instance resource ensure the shielded_instance_config blo
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_compute_instance_ensure_shielded_vm*.
+```hcl
+resource "google_compute_instance" "shielded_vm_test" {
+  name         = "shielded-vm-test"
+  machine_type = "e2-medium"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  network_interface {
+    network = "default"
+  }
+
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_compute_instance" "shielded_vm_test" {
+  name         = "shielded-vm-test"
+  machine_type = "e2-medium"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  network_interface {
+    network = "default"
+  }
+
+  shielded_instance_config {
+    enable_secure_boot = true
+  }
+
+}
+
+```
 
 
 

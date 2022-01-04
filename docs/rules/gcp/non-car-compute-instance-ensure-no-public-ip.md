@@ -23,6 +23,57 @@ For the google_compute_instance resource ensure the access_config sub block unde
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_compute_instance_ensure_no_public_ip*.
+```hcl
+resource "google_compute_address" "static" {
+  name = "ipv4-address"
+}
+
+resource "google_compute_instance" "no_public_ip_test" {
+  name         = "no-public-ip-test"
+  machine_type = "e2-medium"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  network_interface {
+    network = "default"
+    access_config {
+      nat_ip = google_compute_address.static.address
+    }
+  }
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_compute_instance" "no_public_ip_test" {
+  name         = "no-public-ip-test"
+  machine_type = "e2-medium"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  network_interface {
+    network = "default"
+  }
+}
+
+```
 
 
 
