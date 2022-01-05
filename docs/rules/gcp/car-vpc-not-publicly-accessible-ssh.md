@@ -23,6 +23,47 @@ For the google_compute_firewall resource in the ingress direction, set the sourc
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *car_vpc_not_publicly_accessible_ssh*.
+```hcl
+resource "google_compute_network" "default" {
+  name = "default-network"
+}
+
+resource "google_compute_firewall" "example_allow_ssh" {
+  name      = "example-allow-ssh"
+  network   = google_compute_network.default.name
+  direction = "INGRESS"
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_compute_network" "default" {
+  name = "default-network"
+}
+
+resource "google_compute_firewall" "example_allow_ssh" {
+  name          = "example-allow-ssh"
+  network       = google_compute_network.default.name
+  direction     = "INGRESS"
+  source_ranges = "10.1.0.4/32"
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+}
+
+```
 
 
 

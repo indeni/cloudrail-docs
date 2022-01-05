@@ -23,6 +23,33 @@ For the resource google_container_cluster ensure the attribute block authenticat
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *non_car_gke_manage_rbac_users_with_google_groups*.
+```hcl
+resource "google_container_cluster" "example" {
+  name               = "example-gke-cluster"
+  location           = "us-central1"
+  initial_node_count = 3
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_container_cluster" "example" {
+  name               = "example-gke-cluster"
+  location           = "us-central1"
+  initial_node_count = 3
+  authenticator_groups_config {
+    security_group = "gke-security-groups@example.com"
+  }
+}
+
+```
 
 
 

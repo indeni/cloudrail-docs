@@ -23,6 +23,31 @@ For the google_compute_ssl_policy resource, set the min_tls_version attribute to
 
 
 
+##### Example Vulnerable Terraform Resource
+The following is an example terraform resource vulnerable to *car_proxy_lb_ssl_policy_no_weak_ciphers*.
+```hcl
+resource "google_compute_ssl_policy" "example_ssl" {
+  name            = "example-ssl-policy"
+  min_tls_version = "TLS_1_0"
+  profile         = "COMPATIBLE"
+}
+
+
+```
+
+
+
+##### Example Fixed Terraform Resource
+The following is an example terraform resource that has been patched to address the rule.
+```hcl
+resource "google_compute_ssl_policy" "example_ssl" {
+  name            = "example-ssl-policy"
+  min_tls_version = "TLS_1_2"
+  profile         = "CUSTOM"
+  custom_features = ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"]
+}
+
+```
 
 
 
